@@ -12,9 +12,10 @@ Explanation: The first two digits or the last three digits are consecutive 1s.
 
 #### Solution Java
 
-> **思路**:暴力循环;
+> **思路**:暴力循环(速度太慢，打败0.6%);使用临时数组进行一次遍历（打败55%）；
 
 ```
+
     public class Solution {
         public int findMaxConsecutiveOnes(int[] nums) {
             int max = 0;
@@ -31,6 +32,34 @@ Explanation: The first two digits or the last three digits are consecutive 1s.
                     if(temp > max){
                         max = temp;
                     }
+                }
+            }
+            return max;
+        }
+    }
+
+```
+
+---
+
+```
+
+    public class Solution {
+        public int findMaxConsecutiveOnes(int[] nums) {
+            int[] result = new int[nums.length];
+            int max = 0;
+            for(int i = nums.length - 1;i >= 0;i--){
+                if(i != nums.length - 1){
+                    if(nums[i] == 1){
+                        result[i] = result[i+1] + 1;
+                    }
+                }else{
+                    if(nums[i] == 1){
+                       result[i] = 1; 
+                    }
+                }
+                if(result[i] > max){
+                    max = result[i];
                 }
             }
             return max;
