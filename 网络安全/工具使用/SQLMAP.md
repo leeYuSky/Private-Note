@@ -24,6 +24,7 @@
 > * `--schema`, 获得所有的元数据(各个数据库的表, 表的字段等)
 > * `--tables`, 获得所有的表
 > * `--columns`, 获得所有的列
+> * `--tamper=TAMPER`, 输入一个脚本文件
 > * `-a`, 获得所有能查到的数据(-all)
 > * `-d 'mysql://user:password@127.0.0.0/database'`, 直连数据库
 > * `-m file.txt`, 可以读取file中的多个url
