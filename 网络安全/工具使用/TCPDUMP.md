@@ -21,3 +21,5 @@
 > * `tcpdump -n dst host 1.1.1.1 -r a.cap`
 > * `tcpdump -n tcp port 80 -r a.cap`
 > * `tcpdump -n -X tcp port 80 -r a.cap`
+> * 高级筛选
+> 	* `tcpdump -A -n 'tcp[13] = 24 -r a.cap'`, 将 tcp 协议中第14字节(即符号位字节)转换为10进制后为24的筛选出来, ACK = 1, PSH = 1, 表示数据传输的最起始, 此时以完成三次握手   
