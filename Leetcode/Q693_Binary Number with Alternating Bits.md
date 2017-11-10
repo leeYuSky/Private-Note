@@ -7,7 +7,7 @@ Input: 5
 Output: True
 Explanation:
 The binary representation of 5 is: 101
-``
+```
 #### Example 2
 
 ```
